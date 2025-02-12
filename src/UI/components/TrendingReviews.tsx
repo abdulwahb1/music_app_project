@@ -3,37 +3,7 @@ import { Star, Heart, MessageSquare, Share2, Play } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-const reviews = [
-  {
-    id: 1,
-    album: {
-      title: "Planet Her",
-      artist: "Doja Cat",
-      type: "Album",
-      cover: "/p1.jpg",
-    },
-    rating: 3,
-    content:
-      "Such a mixed bag, the songs are either great or horrible with no in-between. A definite step down, but the singles are at least more memorable (for better or for worse). This would probably be higher if it wasn't for how many hooks killed the songs.",
-    user: {
-      name: "k_k",
-      avatar: "/placeholder.png",
-      isPro: true,
-    },
-    stats: {
-      likes: 16,
-      comments: 21,
-    },
-    bestSongs: [
-      "Get Into It (Yuh)",
-      "Kiss Me More (with SZA)",
-      "Need To Know",
-      "Been Like This",
-    ],
-    worstSongs: ["Ohmah ohmah oomah", "You Right (with The Weeknd)", "Naked"],
-  },
-  // Add more reviews...
-];
+import { reviews } from "@/lib/reviewData";
 
 export function TrendingReviews() {
   return (

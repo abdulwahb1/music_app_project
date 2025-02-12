@@ -2,26 +2,7 @@ import Image from "next/image";
 import { Heart, MessageSquare, Share2 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-
-const lists = [
-  {
-    id: 1,
-    title: "Songs I'm Currently Obsessed With",
-    description:
-      "February is getting off to a solid start for me and these songs make a good soundtrack for that.",
-    covers: ["/p1.jpg", "/p2.jpg", "/p5.jpg", "/p4.jpg"],
-    user: {
-      name: "laingley",
-      avatar: "/placeholder.png",
-      isPro: true,
-    },
-    stats: {
-      likes: 29,
-      comments: 16,
-    },
-  },
-  // Add more lists...
-];
+import { lists } from "@/lib/listData";
 
 export function TrendingLists() {
   return (
