@@ -6,7 +6,7 @@ import { lists } from "@/lib/listData";
 
 export function TrendingLists() {
   return (
-    <section className="h-full">
+    <section className="h-full lg:px-2 ">
       <h2 className="mb-4 text-xl font-bold text-white">Trending Lists</h2>
       <div className="grid gap-3">
         {lists.map((list) => (
@@ -34,7 +34,7 @@ export function TrendingLists() {
                   ))}
                 </div>
 
-                <div className="flex-1 space-y-2">
+                <div className="flex-1 space-y-2 text-ellipsis overflow-hidden">
                   {/* List Info */}
                   <div>
                     <h3 className="font-medium">{list.title}</h3>

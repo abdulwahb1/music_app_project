@@ -14,12 +14,12 @@ export default function Hero() {
   ];
 
   return (
-    <div className="relative min-h-[600px] overflow-hidden  px-4 py-20">
+    <div className="relative min-h-[600px] overflow-hidden px-4 py-20">
       {/* Floating Albums */}
       {albums.map((album) => (
         <div
           key={album.id}
-          className={`absolute ${album.position} animate-float`}
+          className={`absolute ${album.position} animate-float hidden 2xl:block `}
         >
           <div className="h-16 w-16 rotate-12 rounded-lg bg-white/10 shadow-lg">
             <Image
@@ -34,14 +34,14 @@ export default function Hero() {
       ))}
 
       {/* Main Content */}
-      <div className="relative mx-auto max-w-3xl text-center">
-        <h1 className="mb-6 space-y-2 text-4xl font-bold tracking-tight text-white md:text-5xl">
+      <div className="relative mx-auto max-w-2xl 2xl:max-w-3xl text-center">
+        <h1 className="mb-6 space-y-2 text-3xl 2xl:text-4xl font-bold tracking-tight text-white md:text-5xl">
           <p>Review your favorite albums.</p>
           <p>Catalog all music you listen to.</p>
           <p>Share your passion for music.</p>
         </h1>
 
-        <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-400">
+        <p className="mx-auto mb-8 max-w-sm 2xl:max-w-2xl text-lg text-gray-400">
           Musicboard is a social platform that allows you to keep track of all
           the music you listen to and grow your passion for music with friends.
           Write reviews, rate albums, and compile lists in music&apos;s fastest

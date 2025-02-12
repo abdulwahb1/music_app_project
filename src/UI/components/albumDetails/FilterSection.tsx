@@ -35,7 +35,7 @@ export function FilterSection({
   className,
 }: FilterSectionProps) {
   return (
-    <div className={cn("space-y-4", className)}>
+    <div className={cn("space-y-4 ", className)}>
       <div className="flex items-center justify-between">
         <h2 className="text-sm font-semibold text-white ml-2">Filters</h2>
         <div className="flex items-center gap-1 text-sm">

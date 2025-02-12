@@ -19,9 +19,15 @@ interface AlbumHeaderProps {
 
 function HomeTab({ album }: AlbumHeaderProps) {
   return (
-    <div className="mt-6 flex gap-6">
-      <div className="flex-[2]">
+    <div className="mt-6 flex lg:flex-row flex-col gap-6">
+      <div className="flex-[2] mx-auto">
+        <div className="block lg:hidden justify-center">
+          <AlbumActions />
+        </div>
         <Tracklist tracks={album?.tracks} />
+        <div className="flex lg:hidden justify-center">
+          <AlbumInformation />
+        </div>
         <div className="my-12">
           <FriendsRatings
             ratings={sampleFriendRatings}
@@ -30,9 +36,11 @@ function HomeTab({ album }: AlbumHeaderProps) {
         </div>
         <TrendingReviews />
       </div>
-      <div className="flex-1">
+      <div className="flex-1 hidden lg:block">
         <AlbumActions />
-        <AlbumInformation />
+        <div className="hidden lg:flex">
+          <AlbumInformation />
+        </div>
       </div>
     </div>
   );
@@ -58,11 +66,18 @@ function ReviewsTab() {
   };
 
   return (
-    <div className="mt-6 flex gap-6">
+    <div className="mt-6 flex flex-col lg:flex-row  gap-6">
+      <div className="block lg:hidden">
+        <FilterSection
+          sections={filterReview}
+          selectedFilters={selectedFilters}
+          onFilterChange={handleFilterChange}
+        />
+      </div>
       <div className="flex-[2]">
         <TrendingReviews />
       </div>
-      <div className="flex-1">
+      <div className="hidden flex-1 lg:block">
         <FilterSection
           sections={filterReview}
           selectedFilters={selectedFilters}
@@ -92,11 +107,18 @@ function ListsTab() {
     });
   };
   return (
-    <div className="mt-6 flex gap-6">
+    <div className="mt-6 flex flex-col lg:flex-row gap-6">
+      <div className="block lg:hidden">
+        <FilterSection
+          sections={filterReview}
+          selectedFilters={selectedFilters}
+          onFilterChange={handleFilterChange}
+        />
+      </div>
       <div className="flex-[2]">
         <TrendingLists />
       </div>
-      <div className="flex-1">
+      <div className="hidden flex-1 lg:block">
         <FilterSection
           sections={filterList}
           selectedFilters={selectedFilters}
@@ -126,14 +148,21 @@ function RatingsTab() {
     });
   };
   return (
-    <div className="mt-6 flex gap-6">
+    <div className="mt-6 flex lg:flex-row flex-col gap-6">
+      <div className="block lg:hidden">
+        <FilterSection
+          sections={filterReview}
+          selectedFilters={selectedFilters}
+          onFilterChange={handleFilterChange}
+        />
+      </div>
       <div className="flex-[2]">
         <FriendsRatings
           ratings={sampleFriendRatings}
           onViewAll={() => console.log("View all clicked")}
         />
       </div>
-      <div className="flex-1">
+      <div className="hidden flex-1 lg:block">
         <FilterSection
           sections={filterRatings}
           selectedFilters={selectedFilters}

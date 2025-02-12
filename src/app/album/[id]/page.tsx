@@ -21,7 +21,7 @@ export default function AlbumPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black mx-auto">
+    <main className="min-h-screen bg-gradient-to-b from-[#0a0f14] to-[#12171c] mx-auto">
       <Navbar />
       <div className="">
         <AlbumHeader album={album} />

@@ -33,13 +33,13 @@ export function FriendsRatings({
           <ChevronRight className="h-5 w-5" />
         </Button>
       </div>
-      <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10 hover:scrollbar-thumb-white/20">
+      <div className="grid grid-cols-3 2xl:flex gap-2 2xl:gap-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10 hover:scrollbar-thumb-white/20">
         {ratings.map((friend) => (
           <div
             key={friend.id}
-            className="flex flex-col items-center gap-2 min-w-[80px]"
+            className="flex flex-col items-center gap-2 2xl:min-w-[80px]"
           >
-            <Avatar className="h-[80px] w-[80px]">
+            <Avatar className="2xl:h-[80px] 2xl:w-[80px]">
               <AvatarImage src={friend.avatar} />
               <AvatarFallback className="bg-zinc-800 text-white">
                 {friend.username[0].toUpperCase()}

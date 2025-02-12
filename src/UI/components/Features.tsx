@@ -41,11 +41,11 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-16 px-4 md:px-6 lg:px-8 mx-auto">
-      <h2 className="mb-6 text-2xl font-bold text-white ml-3">
+    <section className="py-16 2xl:px-4 md:px-6 lg:px-8 mx-auto">
+      <h2 className="mb-6 text-2xl font-bold text-white 2xl:ml-3">
         Musicboard provides you
       </h2>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-sm md:max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => {
             const Icon = feature.icon;

@@ -7,7 +7,7 @@ import { reviews } from "@/lib/reviewData";
 
 export function TrendingReviews() {
   return (
-    <section className="">
+    <section className="lg:px-2 ">
       <h2 className="mb-4 text-xl font-bold text-white">Trending Reviews</h2>
       <div className="grid gap-3">
         {reviews.map((review) => (

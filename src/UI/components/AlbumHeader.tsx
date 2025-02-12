@@ -11,7 +11,7 @@ interface AlbumHeaderProps {
 
 export function AlbumHeader({ album }: AlbumHeaderProps) {
   return (
-    <div className="flex items-start gap-6 bg-black px-6 pt-6 h-72 mx-auto max-w-5xl">
+    <div className="flex lg:flex-row flex-col lg:items-start gap-6 lg:px-6 pt-6 lg:h-72 mx-auto max-w-5xl justify-center items-center">
       {/* Album Cover */}
       <Image
         src={album.cover || "/placeholder.svg"}
@@ -22,8 +22,8 @@ export function AlbumHeader({ album }: AlbumHeaderProps) {
       />
 
       {/* Album Info */}
-      <div className="flex flex-1 gap-8 h-full w-full pb-10">
-        <div className="h-full w-1/2">
+      <div className="flex lg:flex-1 lg:flex-row flex-col gap-8 h-full w-full pb-10 ">
+        <div className="h-full lg:w-1/2 mx-auto">
           <div className="flex flex-col gap-2 h-full justify-end">
             <h1 className="mb-1 text-3xl font-bold text-white">
               {album.title}
@@ -47,8 +47,8 @@ export function AlbumHeader({ album }: AlbumHeaderProps) {
           </div>
         </div>
         {/* Stats */}
-        <div className="flex flex-col gap-6 h-full justify-end items-end w-1/2">
-          <div className="flex items-center gap-8 ml-auto">
+        <div className="flex flex-col gap-6 h-full lg:justify-end justify-center items-center lg:items-end lg:w-1/2">
+          <div className="flex items-center gap-8 lg:ml-auto">
             <div>
               <div className="text-xl font-bold text-white">{album.rating}</div>
               <div className="text-xs text-gray-400">Total ratings</div>

@@ -1,14 +1,15 @@
 "use client";
 
-import { Search } from "lucide-react";
+import { Search, Menu } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export default function Navbar() {
   return (
-    <nav className="flex h-14 items-center gap-4 px-4 text-white max-w-5xl mx-auto">
+    <nav className="flex h-14 items-center gap-4 2xl:px-4 text-white max-w-sm lg:max-w-5xl mx-auto">
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2">
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500">
@@ -26,8 +27,8 @@ export default function Navbar() {
         />
       </div>
 
-      {/* Navigation Links */}
-      <div className="hidden items-center gap-6 md:flex">
+      {/* Desktop Navigation Links */}
+      <div className="hidden items-center gap-6 lg:flex">
         <Link href="/music" className="text-sm hover:text-blue-400">
           Music
         </Link>
@@ -42,34 +43,36 @@ export default function Navbar() {
         </Link>
       </div>
 
-      {/* More Menu (mobile) */}
-      <Button
-        variant="ghost"
-        size="icon"
-        className="md:hidden"
-        onClick={() => {}}
-      >
-        <span className="sr-only">Open menu</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="h-4 w-4"
-        >
-          <circle cx="12" cy="12" r="1" />
-          <circle cx="19" cy="12" r="1" />
-          <circle cx="5" cy="12" r="1" />
-        </svg>
-      </Button>
+      {/* Mobile Menu */}
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button variant="ghost" size="icon" className="lg:hidden">
+            <Menu className="h-5 w-5" />
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="left" className="bg-[#1E1E1E] text-white">
+          <div className="flex flex-col gap-6 mt-6">
+            <Link href="/music" className="text-lg hover:text-blue-400">
+              Music
+            </Link>
+            <Link href="/members" className="text-lg hover:text-blue-400">
+              Members
+            </Link>
+            <Link href="/lists" className="text-lg hover:text-blue-400">
+              Lists
+            </Link>
+            <Link
+              href="/pro"
+              className="text-lg text-blue-400 hover:text-blue-300"
+            >
+              Pro
+            </Link>
+          </div>
+        </SheetContent>
+      </Sheet>
 
       {/* Auth Buttons */}
-      <div className="ml-auto hidden items-center gap-2 md:flex">
+      <div className="ml-auto hidden items-center gap-2 lg:flex">
         <Button
           variant="ghost"
           className="text-sm hover:bg-transparent hover:text-blue-400"
