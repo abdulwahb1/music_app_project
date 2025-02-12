@@ -22,7 +22,7 @@ export default function Navbar() {
         <Input
           type="search"
           placeholder="Search Musicboard..."
-          className="w-full bg-[#2C2C2C] pl-8 text-sm text-white placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0"
+          className="w-full bg-[#2C2C2C] pl-8 text-sm text-white placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0 border-0"
         />
       </div>
 
